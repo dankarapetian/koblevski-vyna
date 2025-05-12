@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Коблівські Вина</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -21,47 +21,54 @@
   </header>
 
   <!-- Заголовок -->
-  <section style="text-align: center; padding: 2rem 1rem;">
-    <h1 style="font-size: 2.5rem; color: #5c0a0a;">Наші Напої</h1>
-    <p style="font-size: 1.2rem; color: #444;">Обирайте категорію, щоб переглянути асортимент</p>
+  <section class="main-header">
+    <h1>Вибір вина та напоїв</h1>
+    <p>Оберіть категорію напоїв для перегляду наших продуктів</p>
   </section>
 
   <!-- Категорії -->
   <section class="categories">
-    <a href="bile.html" class="category" title="Біле вино">
-      <img src="https://vinoteka.ua/image/catalog/vino-bile.webp" alt="Біле вино" />
-      <h3>Біле</h3>
-    </a>
-    <a href="chervone.html" class="category" title="Червоне вино">
-      <img src="https://vinoteka.ua/image/catalog/vino-chervone.webp" alt="Червоне вино" />
-      <h3>Червоне</h3>
-    </a>
-    <a href="roze.html" class="category" title="Розе">
-      <img src="https://vinoteka.ua/image/catalog/vino-roze.webp" alt="Розе" />
+    <div class="category" onclick="window.location.href='bile-wine.html'">
+      <img src="https://example.com/white-wine.jpg" alt="Біле вино">
+      <h3>Біле вино</h3>
+    </div>
+
+    <div class="category" onclick="window.location.href='krasne-wine.html'">
+      <img src="https://example.com/red-wine.jpg" alt="Червоне вино">
+      <h3>Червоне вино</h3>
+    </div>
+
+    <div class="category" onclick="window.location.href='roze-wine.html'">
+      <img src="https://example.com/rose-wine.jpg" alt="Розе">
       <h3>Розе</h3>
-    </a>
-    <a href="igryste.html" class="category" title="Ігристе вино">
-      <img src="https://vinoteka.ua/image/catalog/igryste-vino.webp" alt="Ігристе вино" />
-      <h3>Ігристе</h3>
-    </a>
-    <a href="konyak.html" class="category" title="Коньяк">
-      <img src="https://vinoteka.ua/image/catalog/konyak.webp" alt="Коньяк" />
+    </div>
+
+    <div class="category" onclick="window.location.href='igriste-wine.html'">
+      <img src="https://example.com/sparkling-wine.jpg" alt="Ігристе вино">
+      <h3>Ігристе вино</h3>
+    </div>
+
+    <div class="category" onclick="window.location.href='konjak.html'">
+      <img src="https://example.com/brandy.jpg" alt="Коньяк">
       <h3>Коньяк</h3>
-    </a>
-    <a href="chacha.html" class="category" title="Чача">
-      <img src="https://vinoteka.ua/image/catalog/chacha.webp" alt="Чача" />
+    </div>
+
+    <div class="category" onclick="window.location.href='chacha.html'">
+      <img src="https://example.com/chacha.jpg" alt="Чача">
       <h3>Чача</h3>
-    </a>
-    <a href="rom.html" class="category" title="Ром">
-      <img src="https://vinoteka.ua/image/catalog/rom.webp" alt="Ром" />
+    </div>
+
+    <div class="category" onclick="window.location.href='rom.html'">
+      <img src="https://example.com/rum.jpg" alt="Ром">
       <h3>Ром</h3>
-    </a>
+    </div>
   </section>
 
-  <!-- Футер -->
-  <footer style="text-align: center; padding: 2rem; color: #999; font-size: 0.9rem;">
-    &copy; 2025 Коблівські Вина. Всі права захищені.
+  <!-- Підвал -->
+  <footer>
+    <p>&copy; 2025 Коблівські Вина. Усі права захищені.</p>
   </footer>
 
 </body>
 </html>
+
