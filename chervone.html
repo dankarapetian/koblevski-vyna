@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Червоні Вина | Коблівські Вина</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Навігація -->
+  <header class="navbar">
+    <div class="logo">🍷 Коблівські Вина</div>
+    <nav class="nav-links">
+      <a href="index.html">Головна</a>
+      <a href="pro-nas.html">Про нас</a>
+      <a href="umovy.html">Умови</a>
+      <a href="licenzii.html">Ліцензії</a>
+      <a href="kontakty.html">Контакти</a>
+    </nav>
+  </header>
+
+  <!-- Заголовок -->
+  <section class="subcategory-header">
+    <h1>Червоні Вина</h1>
+    <p>Оберіть вино для перегляду характеристик</p>
+  </section>
+
+  <!-- Вина -->
+  <section class="products">
+
+    <div class="product" onclick="openModal('modal1')">
+      <img src="https://vinoteka.ua/image/catalog/products/merlo.webp" alt="Мерло">
+      <h3>Мерло</h3>
+    </div>
+
+    <div class="product" onclick="openModal('modal2')">
+      <img src="https://vinoteka.ua/image/catalog/products/kabernet.webp" alt="Каберне Совіньйон">
+      <h3>Каберне Совіньйон</h3>
+    </div>
+
+    <div class="product" onclick="openModal('modal3')">
+      <img src="https://vinoteka.ua/image/catalog/products/saperavi.webp" alt="Сапераві">
+      <h3>Сапераві</h3>
+    </div>
+
+    <div class="product" onclick="openModal('modal4')">
+      <img src="https://vinoteka.ua/image/catalog/products/pinot-noir.webp" alt="Піно Нуар">
+      <h3>Піно Нуар</h3>
+    </div>
+
+  </section>
+
+  <!-- Модальні вікна -->
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Мерло</h2>
+      <p><strong>Сорт:</strong> Мерло</p>
+      <p><strong>Міцність:</strong> 13%</p>
+      <p><strong>Обʼєм:</strong> 0.75 л</p>
+      <p><strong>Опис:</strong> Мʼяке червоне вино з нотками вишні, сливи та шоколаду.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Каберне Совіньйон</h2>
+      <p><strong>Сорт:</strong> Каберне Совіньйон</p>
+      <p><strong>Міцність:</strong> 13.5%</p>
+      <p><strong>Обʼєм:</strong> 0.75 л</p>
+      <p><strong>Опис:</strong> Насичене вино з ароматами чорної смородини та спецій.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Сапераві</h2>
+      <p><strong>Сорт:</strong> Сапераві</p>
+      <p><strong>Міцність:</strong> 12%</p>
+      <p><strong>Обʼєм:</strong> 0.75 л</p>
+      <p><strong>Опис:</strong> Грузинське червоне вино з глибоким смаком і танінами.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal4">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2>Піно Нуар</h2>
+      <p><strong>Сорт:</strong> Піно Нуар</p>
+      <p><strong>Міцність:</strong> 12.5%</p>
+      <p><strong>Обʼєм:</strong> 0.75 л</p>
+      <p><strong>Опис:</strong> Вишукане легке вино з ароматами малини та квітів.</p>
+    </div>
+  </div>
+
+  <!-- Скріпт -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(function(modal) {
+        if (event.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+
+</body>
+</html>
