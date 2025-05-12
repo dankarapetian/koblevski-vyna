@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Коблівські Вина</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card:hover .details { display: block; }
+    .details { display: none; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-red-100 shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-red-800">Коблівські Вина</h1>
+    <nav class="space-x-4">
+      <a href="#about" class="text-red-700 hover:underline">Про нас</a>
+      <a href="#terms" class="text-red-700 hover:underline">Умови</a>
+      <a href="#license" class="text-red-700 hover:underline">Ліцензії</a>
+    </nav>
+  </header>
+
+  <!-- Categories -->
+  <section class="p-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    <!-- Template for each category -->
+    <script>
+      const categories = [
+        {
+          title: "Біле Вино",
+          image: "https://images.unsplash.com/photo-1606813902494-0162d7c1c516",
+          drinks: [
+            {
+              name: "Шардоне",
+              image: "https://images.unsplash.com/photo-1600788907411-3703a0da70fd",
+              info: "Сухе, 12.5%, 2021, аромат яблука та цитрусу"
+            },
+            {
+              name: "Рислінг",
+              image: "https://images.unsplash.com/photo-1510626176961-4bfb7f13b305",
+              info: "Напівсухе, 11.5%, 2020, квітковий аромат"
+            }
+          ]
+        },
+        {
+          title: "Червоне Вино",
+          image: "https://images.unsplash.com/photo-1510626176961-4bfb7f13b305",
+          drinks: [
+            {
+              name: "Каберне Совіньйон",
+              image: "https://images.unsplash.com/photo-1600180758890-3fbb937fa1bd",
+              info: "Сухе, 13.5%, 2020, насичений аромат темних ягід"
+            },
+            {
+              name: "Мерло",
+              image: "https://images.unsplash.com/photo-1578684365250-8e40c6aa8f2e",
+              info: "М'яке, 12%, 2021, ноти вишні та шоколаду"
+            }
+          ]
+        },
+        {
+          title: "Розе",
+          image: "https://images.unsplash.com/photo-1527169402691-a47ad25cb82a",
+          drinks: [
+            {
+              name: "Розе Каберне",
+              image: "https://images.unsplash.com/photo-1592839899643-fd171f3f778b",
+              info: "Сухе, 12%, 2022, ягідні ноти"
+            }
+          ]
+        },
+        {
+          title: "Ігристе",
+          image: "https://images.unsplash.com/photo-1617641387601-7d08d5f1c0a2",
+          drinks: [
+            {
+              name: "Бріют",
+              image: "https://images.unsplash.com/photo-1617196038433-cd6c5c2fc60b",
+              info: "Ігристе сухе, 11%, легкий післясмак"
+            }
+          ]
+        },
+        {
+          title: "Коньяк",
+          image: "https://images.unsplash.com/photo-1600267165694-7c3eac8e1b39",
+          drinks: [
+            {
+              name: "Коблево XO",
+              image: "https://images.unsplash.com/photo-1600267165694-7c3eac8e1b39",
+              info: "Витримка 10 років, міцність 40%"
+            }
+          ]
+        },
+        {
+          title: "Чача",
+          image: "https://images.unsplash.com/photo-1621698492063-1576d060c2df",
+          drinks: [
+            {
+              name: "Класична",
+              image: "https://images.unsplash.com/photo-1589468458603-e1c79949b927",
+              info: "Домашня, виноградна, 50%"
+            }
+          ]
+        },
+        {
+          title: "Ром",
+          image: "https://images.unsplash.com/photo-1580906855284-63d2ba0bd74e",
+          drinks: [
+            {
+              name: "Світлий ром",
+              image: "https://images.unsplash.com/photo-1580906855284-63d2ba0bd74e",
+              info: "Карибський, 40%, ванільні ноти"
+            }
+          ]
+        }
+      ];
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const section = document.querySelector("section");
+        categories.forEach(category => {
+          const catDiv = document.createElement("div");
+          catDiv.className = "bg-white shadow-lg rounded-xl overflow-hidden";
+          catDiv.innerHTML = `
+            <img src="${category.image}" class="w-full h-48 object-cover" alt="${category.title}">
+            <div class="p-4">
+              <h2 class="text-xl font-bold text-red-700 mb-2">${category.title}</h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                ${category.drinks.map(drink => `
+                  <div class="card border p-2 rounded hover:shadow-md transition relative">
+                    <img src="${drink.image}" alt="${drink.name}" class="w-full h-32 object-cover rounded"/>
+                    <p class="mt-1 font-semibold text-center">${drink.name}</p>
+                    <div class="details absolute inset-0 bg-white/90 backdrop-blur p-4 flex items-center justify-center text-sm text-gray-700">
+                      ${drink.info}
+                    </div>
+                  </div>
+                `).join("")}
+              </div>
+            </div>
+          `;
+          section.appendChild(catDiv);
+        });
+      });
+    </script>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-red-100 p-4 text-center text-sm text-gray-600">
+    © 2025 Коблівські Вина. Всі права захищені.
+  </footer>
+
+  <!-- About / Terms / License Sections -->
+  <section id="about" class="p-8 bg-gray-100">
+    <h2 class="text-2xl font-bold mb-4">Про нас</h2>
+    <p>Ми — виробники високоякісних вин і міцних напоїв з серця Коблево.</p>
+  </section>
+
+  <section id="terms" class="p-8">
+    <h2 class="text-2xl font-bold mb-4">Умови</h2>
+    <p>Усі напої продаються лише повнолітнім. Просимо споживати відповідально.</p>
+  </section>
+
+  <section id="license" class="p-8 bg-gray-100">
+    <h2 class="text-2xl font-bold mb-4">Ліцензії</h2>
+    <p>Наша продукція сертифікована згідно з українським законодавством.</p>
+  </section>
+
+</body>
+</html>
