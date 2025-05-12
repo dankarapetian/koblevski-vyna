@@ -1,4 +1,4 @@
-/* Основные стили для всего сайта */
+/* Основные стили для сайта */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -11,68 +11,66 @@ body {
   background-color: #333;
   color: white;
   padding: 15px;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Стилизация логотипа */
 .navbar .logo {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: bold;
   color: #ff6347; /* Томатный цвет для логотипа */
-  margin-bottom: 10px;
 }
 
-/* Стилизация заголовка над кнопками */
-.nav-title {
-  font-size: 24px;
-  color: #ff6347; /* Цвет заголовка (Томатный) */
-  margin-bottom: 20px;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-}
-
-/* Стилизация навигационных ссылок (кнопок) */
 .nav-links a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
-  padding: 10px 20px;
-  background-color: #4CAF50; /* Зеленый фон для кнопок */
-  border-radius: 5px;
-  font-size: 18px;
-  transition: background-color 0.3s, transform 0.2s; /* Плавные эффекты при наведении */
+  font-size: 16px;
+  transition: color 0.3s;
 }
 
-/* Эффект при наведении на кнопки */
 .nav-links a:hover {
-  background-color: #45a049; /* Изменение фона при наведении */
-  transform: scale(1.05); /* Легкое увеличение при наведении */
+  color: #ff6347; /* Цвет текста при наведении */
 }
 
-/* Дополнительный стиль для активного состояния кнопки */
-.nav-links a:active {
-  background-color: #388e3c; /* Темнее цвет фона при клике */
+/* Заголовок */
+.main-header {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  margin-bottom: 30px;
 }
 
-/* Стилизация категорий (картинок с кнопками) */
+.main-header h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.main-header p {
+  font-size: 18px;
+  color: #666;
+}
+
+/* Стилизация категорий */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .category {
-  background-color: #fff;
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
   text-align: center;
-  transition: transform 0.3s;
 }
 
 .category:hover {
-  transform: scale(1.05); /* Увеличение категории при наведении */
+  transform: translateY(-5px); /* Легкое поднятие карточки при наведении */
 }
 
 .category img {
@@ -84,7 +82,9 @@ body {
 .category h3 {
   font-size: 20px;
   color: #333;
-  margin: 15px 0;
+  padding: 10px 0;
+  background-color: #f8f8f8;
+  margin: 0;
 }
 
 /* Підвал */
@@ -92,15 +92,16 @@ footer {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  width: 100%;
+  padding: 15px;
+  position: relative;
   bottom: 0;
+  width: 100%;
 }
 
 footer p {
   margin: 0;
   font-size: 14px;
 }
+
 
 
