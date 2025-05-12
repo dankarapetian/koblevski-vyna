@@ -1,206 +1,204 @@
-/* === Основні стилі сайту === */
-
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* Загальний стиль */
+* {
   margin: 0;
   padding: 0;
-  background-color: #fffdf9;
-  color: #222;
-  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #333;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* === Шапка та навігація === */
-
+/* Заголовок та навігація */
 .navbar {
-  background-color: #5c0a0a;
-  color: #fff;
-  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+.navbar .logo {
+  font-size: 1.5rem;
+  color: #fff;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .nav-links a {
   color: #fff;
-  font-weight: 500;
-  transition: color 0.3s;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #fbd6b0;
+  background-color: #444;
 }
 
-/* === Категорії продукції === */
-
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.category {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-  background-color: #fff;
-}
-
-.category:hover {
-  transform: scale(1.03);
-}
-
-.category img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.category h3 {
+/* Заголовок категорій */
+.subcategory-header {
   text-align: center;
-  padding: 1rem;
-  background-color: #f6f2ed;
-  font-size: 1.3rem;
-  color: #5c0a0a;
+  padding: 50px 20px;
+  background-color: #f1f1f1;
 }
 
-/* === Сторінка "Про нас" === */
-
-.about-us {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-size: 1.2rem;
-  line-height: 1.7;
-}
-
-.about-us h1 {
+.subcategory-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #500000;
+  margin-bottom: 10px;
 }
 
-.about-us p {
-  margin-bottom: 1.2rem;
-  color: #333;
+.subcategory-header p {
+  font-size: 1.2rem;
 }
 
-.about-us .about-image {
-  width: 100%;
-  border-radius: 10px;
-  margin: 2rem 0;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* === Сторінка "Умови" === */
-
-.terms {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.terms h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  color: #500000;
-}
-
-.terms h2 {
-  font-size: 1.6rem;
-  margin-top: 1.8rem;
-  margin-bottom: 0.8rem;
-  color: #333;
-}
-
-.terms p {
-  margin-bottom: 1rem;
-}
-
-/* === Сторінка "Ліцензії" === */
-
-.licenses {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.licenses h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  color: #500000;
-}
-
-.license-grid {
+/* Продукти */
+.products {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem 0;
+  padding: 30px;
+  gap: 20px;
 }
 
-.license-item {
-  flex: 1 1 30%;
+.product {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+}
+
+.product h3 {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #222;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Підсвічування при наведенні */
+.product:hover {
+  transform: scale(1.05);
+}
+
+/* Модальні вікна */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
   text-align: center;
 }
 
-.license-item img {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
-.license-item p {
-  font-size: 1rem;
+.modal-content p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
   color: #333;
+  cursor: pointer;
 }
 
-/* === Адаптація для мобільних === */
+.close:hover {
+  color: #e60000;
+}
 
+/* Кнопка для закриття модальних вікон */
+.close:focus {
+  outline: none;
+}
+
+/* Загальна стилізація для кнопок, форм, та інших елементів */
+button {
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #222;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Мобільна адаптивність */
 @media (max-width: 768px) {
-  .nav-links {
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
   }
 
-  .categories {
-    grid-template-columns: 1fr;
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .license-grid {
+  .products {
     flex-direction: column;
     align-items: center;
+  }
+
+  .product {
+    width: 80%;
+    margin-bottom: 20px;
   }
 }
 
