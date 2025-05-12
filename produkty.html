@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Продукція — Коблівські Вина</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Навігаційне меню -->
+  <header class="navbar">
+    <div class="logo">🍇 Коблівські Вина</div>
+    <nav class="nav-links">
+      <a href="index.html">Головна</a>
+      <a href="produkty.html">Продукція</a>
+      <a href="pro-nas.html">Про нас</a>
+      <a href="umovy.html">Умови</a>
+      <a href="licenzii.html">Ліцензії</a>
+      <a href="kontakty.html">Контакти</a>
+    </nav>
+  </header>
+
+  <!-- Секція категорій -->
+  <section class="categories">
+    <h2>Наша Продукція</h2>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1617122158985-f315277df88b?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjk5MXwwfDF8c2VhY2h8MXx8Y29tcGFueSUyMHdoaXRlJTIwd2luZXxlbnwwfHx8fDE2NjM0ODAzNzA&ixlib=rb-1.2.1&q=80&w=400" alt="Біле Вино" />
+      <div class="category-info">
+        <h3>Біле Вино</h3>
+        <p>Насолоджуйтесь свіжістю та легкістю наших білих вин. Ідеально підходять для літніх вечорів.</p>
+        <a href="napij.html" class="btn">Детальніше</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1594104528471-4fc1a32d6e47?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjk5MXwwfDF8c2VhY2h8Mnx8Y3JlYXRpdmUlMjB3aW5lJTIwZm9vZHxlbnxlbnwwfHx8fDE2NjM0ODExNTg&ixlib=rb-1.2.1&q=80&w=400" alt="Червоне Вино" />
+      <div class="category-info">
+        <h3>Червоне Вино</h3>
+        <p>Глибокий смак червоних вин із виноградників Коблево. Справжнє задоволення для гурманів.</p>
+        <a href="napij.html" class="btn">Детальніше</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1603990506433-9c9a4ab7bcdb?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjk5MXwwfDF8c2VhY2h8M3x8cmluayUyMHJvc2UlMjB3aW5lfGVufDB8fHx8fDE2NjM0ODQzNjY&ixlib=rb-1.2.1&q=80&w=400" alt="Розе" />
+      <div class="category-info">
+        <h3>Розе</h3>
+        <p>Легке та ароматне вино для поціновувачів ніжних смаків.</p>
+        <a href="napij.html" class="btn">Детальніше</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1533234743-0182058ef6e3?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjk5MXwwfDF8c2VhY2h8Nnx8Y2lydGFpJTIwYml0ZGVyZXMlMjBmb3IlMjB3aW5lZGVyfGVufDB8fHx8fDE2NjM0ODU0MTg&ixlib=rb-1.2.1&q=80&w=400" alt="Ігристе Вино" />
+      <div class="category-info">
+        <h3>Ігристе Вино</h3>
+        <p>Справжнє ігристе для святкувань та важливих моментів життя.</p>
+        <a href="napij.html" class="btn">Детальніше</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+/* Секція категорій */
+.categories {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.category {
+  display: inline-block;
+  width: 45%;
+  margin: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+
+.category:hover {
+  transform: translateY(-10px);
+}
+
+.category img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.category-info {
+  padding: 1.5rem;
+}
+
+.category-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.category-info p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.category-info .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #a00000;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.category-info .btn:hover {
+  background: #770000;
+}
+
+/* Адаптивність для мобільних */
+@media screen and (max-width: 768px) {
+  .category {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
