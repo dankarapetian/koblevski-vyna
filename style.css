@@ -1,107 +1,175 @@
-/* Основные стили для сайта */
-body {
-  font-family: 'Arial', sans-serif;
+/* Скидання стилів */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  box-sizing: border-box;
 }
 
-/* Основной стиль для навигации */
+/* Загальне */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Навігація */
 .navbar {
-  background-color: #333;
-  color: white;
-  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #6b0f1a;
+  padding: 20px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.navbar .logo {
+.logo {
+  color: white;
   font-size: 24px;
   font-weight: bold;
-  color: #ff6347; /* Томатный цвет для логотипа */
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 16px;
+  margin-left: 30px;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ff6347; /* Цвет текста при наведении */
+  color: #ffcccb;
 }
 
-/* Заголовок */
+/* Паралакс секція */
+.hero {
+  background-image: url('image/hero-wine.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.3rem;
+}
+
+/* Заголовок секції */
 .main-header {
   text-align: center;
-  padding: 50px 20px;
-  background-color: #f8f8f8;
-  margin-bottom: 30px;
+  padding: 60px 20px 40px;
+  background-color: #fff3f3;
 }
 
-.main-header h1 {
-  font-size: 36px;
-  color: #333;
+.main-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #6b0f1a;
 }
 
 .main-header p {
-  font-size: 18px;
-  color: #666;
+  font-size: 1.1rem;
+  color: #444;
 }
 
-/* Стилизация категорий */
+/* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px;
+  background-color: #fff;
 }
 
 .category {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fefefe;
+  border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .category:hover {
-  transform: translateY(-5px); /* Легкое поднятие карточки при наведении */
+  transform: translateY(-10px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
 .category img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  transition: opacity 0.3s;
 }
 
 .category h3 {
-  font-size: 20px;
-  color: #333;
-  padding: 10px 0;
-  background-color: #f8f8f8;
-  margin: 0;
+  padding: 20px;
+  font-size: 1.3rem;
+  color: #6b0f1a;
+  background-color: #fff;
 }
 
 /* Підвал */
 footer {
-  background-color: #333;
+  background-color: #6b0f1a;
   color: white;
   text-align: center;
-  padding: 15px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
+  padding: 25px 10px;
+  margin-top: 60px;
   font-size: 14px;
 }
 
+/* Адаптив */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-links {
+    margin-top: 15px;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .main-header h2 {
+    font-size: 2rem;
+  }
+
+  .category img {
+    height: 180px;
+  }
+}
 
 
