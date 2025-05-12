@@ -1,275 +1,206 @@
-/* Сброс стилей */
-* {
+/* === Основні стилі сайту === */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #fffdf9;
+  color: #222;
+  scroll-behavior: smooth;
 }
 
-/* Общие стили */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #fafafa;
-  color: #333;
-  line-height: 1.6;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Навигационная панель */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Шапка та навігація === */
+
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: #5c0a0a;
+  color: #fff;
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
-  margin-left: 2rem;
-  text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #a00000;
+  color: #fbd6b0;
 }
 
-/* Стили для баннера */
-.hero {
-  background-image: url('https://images.unsplash.com/photo-1603386329225-868f6c205dce?auto=format&fit=crop&w=1950&q=80');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
+/* === Категорії продукції === */
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #a00000;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: #770000;
-}
-
-/* Адаптивность */
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-links {
-    margin-top: 1rem;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-/* Детали напитка */
-.drink-detail {
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   padding: 2rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.drink-header {
-  display: flex;
-  margin-bottom: 2rem;
-}
-
-.drink-header img {
-  width: 50%;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.drink-info {
-  padding-left: 2rem;
-}
-
-.drink-info h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.drink-info p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-}
-
-.drink-description h2,
-.drink-description h3 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.drink-description p,
-.drink-description ul {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.drink-description ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.drink-description ul li {
-  margin-bottom: 0.5rem;
-}
-
-.drink-description .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background: #a00000;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.drink-description .btn:hover {
-  background: #770000;
-}
-
-/* Адаптивність для мобільних */
-@media screen and (max-width: 768px) {
-  .drink-header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .drink-header img {
-    width: 80%;
-    margin-bottom: 1rem;
-  }
-
-  .drink-info {
-    padding-left: 0;
-    text-align: center;
-  }
-}
-/* Секція категорій */
-.categories {
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.categories h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
 .category {
-  display: inline-block;
-  width: 45%;
-  margin: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
+  cursor: pointer;
+  background-color: #fff;
 }
 
 .category:hover {
-  transform: translateY(-10px);
+  transform: scale(1.03);
 }
 
 .category img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
-.category-info {
-  padding: 1.5rem;
+.category h3 {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f6f2ed;
+  font-size: 1.3rem;
+  color: #5c0a0a;
 }
 
-.category-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+/* === Сторінка "Про нас" === */
+
+.about-us {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+.about-us h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #500000;
+}
+
+.about-us p {
+  margin-bottom: 1.2rem;
   color: #333;
 }
 
-.category-info p {
-  font-size: 1rem;
+.about-us .about-image {
+  width: 100%;
+  border-radius: 10px;
+  margin: 2rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Сторінка "Умови" === */
+
+.terms {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.terms h1 {
+  font-size: 2.4rem;
   margin-bottom: 1.5rem;
+  color: #500000;
 }
 
-.category-info .btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #a00000;
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: bold;
-  transition: background 0.3s ease;
+.terms h2 {
+  font-size: 1.6rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #333;
 }
 
-.category-info .btn:hover {
-  background: #770000;
+.terms p {
+  margin-bottom: 1rem;
 }
 
-/* Адаптивність для мобільних */
-@media screen and (max-width: 768px) {
-  .category {
-    width: 100%;
-    margin-bottom: 2rem;
+/* === Сторінка "Ліцензії" === */
+
+.licenses {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.licenses h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #500000;
+}
+
+.license-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.license-item {
+  flex: 1 1 30%;
+  text-align: center;
+}
+
+.license-item img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.license-item p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* === Адаптація для мобільних === */
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+  }
+
+  .license-grid {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
