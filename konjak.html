@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Коньяк | Коблівські Вина</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Навігація -->
+  <header class="navbar">
+    <div class="logo">🍷 Коблівські Вина</div>
+    <nav class="nav-links">
+      <a href="index.html">Головна</a>
+      <a href="pro-nas.html">Про нас</a>
+      <a href="umovy.html">Умови</a>
+      <a href="licenzii.html">Ліцензії</a>
+      <a href="kontakty.html">Контакти</a>
+    </nav>
+  </header>
+
+  <!-- Заголовок -->
+  <section class="subcategory-header">
+    <h1>Коньяк</h1>
+    <p>Оберіть напій для перегляду характеристик</p>
+  </section>
+
+  <!-- Вина -->
+  <section class="products">
+
+    <div class="product" onclick="openModal('modal1')">
+      <img src="https://example.com/konjak1.jpg" alt="Коньяк 1">
+      <h3>Коньяк 1</h3>
+    </div>
+
+    <div class="product" onclick="openModal('modal2')">
+      <img src="https://example.com/konjak2.jpg" alt="Коньяк 2">
+      <h3>Коньяк 2</h3>
+    </div>
+
+    <div class="product" onclick="openModal('modal3')">
+      <img src="https://example.com/konjak3.jpg" alt="Коньяк 3">
+      <h3>Коньяк 3</h3>
+    </div>
+
+  </section>
+
+  <!-- Модальні вікна -->
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Коньяк 1</h2>
+      <p><strong>Міцність:</strong> 40%</p>
+      <p><strong>Обʼєм:</strong> 0.7 л</p>
+      <p><strong>Опис:</strong> Гладкий смак з нотами дуба та ванілі.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Коньяк 2</h2>
+      <p><strong>Міцність:</strong> 42%</p>
+      <p><strong>Обʼєм:</strong> 0.7 л</p>
+      <p><strong>Опис:</strong> Глибокий смак з відтінками шоколаду та спецій.</p>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Коньяк 3</h2>
+      <p><strong>Міцність:</strong> 43%</p>
+      <p><strong>Обʼєм:</strong> 0.7 л</p>
+      <p><strong>Опис:</strong> Легкий, елегантний смак з фруктовими нотками.</p>
+    </div>
+  </div>
+
+  <!-- Скріпт -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(function(modal) {
+        if (event.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+
+</body>
+</html>
