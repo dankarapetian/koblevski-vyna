@@ -1,24 +1,24 @@
-// Функція для приховання/показу меню на мобільних пристроях при прокручуванні
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-
-// Обробник прокручування
-window.addEventListener('scroll', function() {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (currentScroll > lastScrollTop) {
-    // Скрол вниз, приховати меню
-    navbar.classList.add('hidden');
+// Скрипт для приховування меню при прокручуванні
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 100) { // Якщо прокручено більше 100px
+    navbar.classList.add('scrolled'); // Додає клас, щоб сховати меню
   } else {
-    // Скрол вгору, показати меню
-    navbar.classList.remove('hidden');
+    navbar.classList.remove('scrolled'); // Видаляє клас при поверненні наверх
   }
-
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Зупинка на верхній частині сторінки
 });
 
-// Функція для показу меню на мобільних пристроях при натисканні кнопки
-const menuToggle = document.querySelector('.menu-toggle');
-menuToggle.addEventListener('click', () => {
-  navbar.classList.toggle('open');
+// Відкриття/закриття мобільного меню за допомогою кнопки
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const navbarLinks = document.querySelector('.nav-links');
+
+mobileMenuButton.addEventListener('click', function () {
+  navbarLinks.classList.toggle('active'); // Додає або видаляє клас 'active' при натисканні на кнопку
+});
+
+// Закриття меню при натисканні на будь-який пункт меню в мобільній версії
+navbarLinks.addEventListener('click', function () {
+  if (window.innerWidth <= 768) {
+    navbarLinks.classList.remove('active'); // Закриває меню після вибору пункту
+  }
 });
