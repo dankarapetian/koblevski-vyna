@@ -93,11 +93,10 @@ body {
 }
 
 /* Зображення hero */
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 300px; /* Максимальна висота */
-  object-fit: cover;
+img.hero-wine {
+    width: 10%; /* Установите желаемый процент ширины */
+    height: auto; /* Сохранение пропорций изображения */
+    max-width: 400px; /* Максимальная ширина изображения */
 }
 
 /* Категорії */
