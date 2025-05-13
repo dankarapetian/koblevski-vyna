@@ -5,11 +5,13 @@
   box-sizing: border-box;
 }
 
+/* Загальні стилі */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
+  padding: 0 15px; /* додано паддинг для контенту */
 }
 
 /* Навігація */
@@ -147,4 +149,27 @@ footer {
   }
 }
 
+/* Додатково для мобільних телефонів */
+@media (max-width: 480px) {
+  .main-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .main-header p {
+    font-size: 1rem;
+  }
+
+  .category {
+    padding: 15px;
+    height: auto;
+  }
+
+  .category img {
+    max-height: 100px; /* Зменшуємо висоту зображення для маленьких екранів */
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+}
 
