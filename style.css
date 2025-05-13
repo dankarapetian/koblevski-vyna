@@ -43,16 +43,46 @@ body {
   color: #ffcccb;
 }
 
-/* Заголовок */
+/* Паралакс секція */
+.hero {
+  background-image: url('image/hero-wine.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Заголовок секції */
 .main-header {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 50px 20px 30px;
   background-color: #fff3f3;
 }
 
-.main-header h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+.main-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
   color: #6b0f1a;
 }
 
@@ -64,11 +94,10 @@ body {
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   padding: 60px;
   background-color: #fff;
-  justify-items: center;
 }
 
 .category {
@@ -79,36 +108,28 @@ body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 20px 0;
 }
 
 .category:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-.category img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  transition: opacity 0.3s;
-}
-
-/* Спеціальний розмір для великих */
+/* Стиль для категорій, крім коньяку */
 .category.bile img,
 .category.chervone img,
 .category.roze img,
 .category.igriste img,
 .category.chacha img,
 .category.rom img {
-  width: 400px;
-  height: 750px;
-  object-fit: cover;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
-/* Звичайний розмір для Коньяку */
+/* Стандартний коньяк */
 .category.konjak img {
   width: 100%;
   height: 200px;
@@ -116,8 +137,8 @@ body {
 }
 
 .category h3 {
-  padding: 20px;
-  font-size: 1.3rem;
+  padding: 15px 10px 0;
+  font-size: 1.2rem;
   color: #6b0f1a;
   background-color: #fff;
 }
@@ -148,32 +169,21 @@ footer {
     margin: 10px 0;
   }
 
-  .main-header h1 {
+  .hero h1 {
     font-size: 2rem;
   }
 
-  .main-header p {
+  .hero p {
     font-size: 1rem;
   }
 
-  .categories {
-    padding: 30px;
-    grid-template-columns: 1fr;
+  .main-header h2 {
+    font-size: 2rem;
   }
 
   .category img {
-    width: 100%;
     height: auto;
-  }
-
-  .category.bile img,
-  .category.chervone img,
-  .category.roze img,
-  .category.igriste img,
-  .category.chacha img,
-  .category.rom img {
-    width: 100%;
-    height: auto;
+    width: 140px;
   }
 }
 
