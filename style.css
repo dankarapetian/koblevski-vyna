@@ -7,85 +7,103 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fafafa; /* Світлий фон */
-  color: #333; /* Темний текст */
+  background-color: #fafafa;
+  color: #333;
   line-height: 1.6;
 }
 
 /* Навігація */
 .navbar {
-  background-color: #6b0f1a; /* Основний червоний */
+  background-color: #6b0f1a;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px; /* Тонша шапка */
+  padding: 10px 20px;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  transform: translateY(-100%);
 }
 
 .logo {
-  font-size: 20px; /* Зменшений розмір логотипу */
+  font-size: 20px;
   font-weight: bold;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
+  margin-left: 20px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #ffdede; /* Світлий червоний для hover */
+  color: #ffdede;
 }
 
-/* Hero-зображення */
-.hero {
-  margin-top: 60px; /* Відступ для шапки */
-  width: 100%;
-  height: 450px;
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+/* Мобільне меню */
+.mobile-menu-button {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 /* Заголовок */
 .main-header {
   text-align: center;
   padding: 80px 20px 40px;
-  background-color: #fff3f3; /* Легкий фон */
+  background-color: #fff3f3;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-header::before {
+  content: "";
+  background-image: url('image/hero-wine.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh; /* Для фонового зображення */
+  z-index: -1;
+  opacity: 0.4;
 }
 
 .main-header h1 {
-  font-size: 3rem;
-  color: #6b0f1a; /* Основний червоний */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .main-header p {
   font-size: 1.2rem;
   color: #444;
-  margin-top: 10px;
+}
+
+/* Зображення hero */
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px; /* Максимальна висота */
+  object-fit: cover;
 }
 
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 60px;
 }
@@ -102,6 +120,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  height: 320px;
 }
 
 .category:hover {
@@ -110,7 +129,7 @@ body {
 }
 
 .category img {
-  max-height: 140px;
+  max-height: 120px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -122,13 +141,10 @@ body {
 .category h3 {
   margin-top: 15px;
   font-size: 1.2rem;
-  color: #6b0f1a; /* Основний червоний */
+  color: #6b0f1a;
 }
 
-.category.konjak img {
-  max-height: 120px;
-}
-
+/* Footer */
 footer {
   background-color: #6b0f1a;
   color: white;
@@ -139,12 +155,12 @@ footer {
 
 /* Адаптивність */
 @media (max-width: 1024px) {
-  .hero-image {
-    max-height: 350px;
-  }
-
   .categories {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-image {
+    max-height: 250px;
   }
 }
 
@@ -152,31 +168,55 @@ footer {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 15px 20px;
+    padding: 10px 20px;
+  }
+
+  .mobile-menu-button {
+    display: block;
   }
 
   .nav-links {
+    display: none;
     flex-direction: column;
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .nav-links a {
     margin: 10px 0;
   }
 
-  .hero-image {
-    max-height: 250px;
+  .main-header::before {
+    height: 250px; /* Для мобільних пристроїв */
+  }
+
+  .main-header {
+    padding: 120px 20px 40px;
+  }
+
+  .main-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-header p {
+    font-size: 1rem;
   }
 
   .categories {
     grid-template-columns: repeat(2, 1fr);
     padding: 30px;
+    gap: 20px;
   }
-}
 
-@media (max-width: 480px) {
-  .hero-image {
-    max-height: 200px;
+  .category {
+    height: auto;
+  }
+
+  .category img {
+    max-height: 120px;
   }
 }
