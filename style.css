@@ -11,7 +11,6 @@ body {
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
-  padding: 0 15px; /* додано паддинг для контенту */
 }
 
 /* Навігація */
@@ -44,6 +43,18 @@ body {
   color: #ffdede;
 }
 
+/* Зображення героя */
+.hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Заголовок */
 .main-header {
   text-align: center;
@@ -65,7 +76,7 @@ body {
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* 4 категорії в рядку */
   gap: 30px;
   padding: 60px;
 }
@@ -147,29 +158,22 @@ footer {
   .category img {
     max-height: 120px;
   }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr); /* 2 категорії в рядку на мобільних */
+  }
 }
 
-/* Додатково для мобільних телефонів */
+/* Мобільна версія - приховування меню при прокрутці */
 @media (max-width: 480px) {
-  .main-header h1 {
-    font-size: 1.6rem;
-  }
-
-  .main-header p {
-    font-size: 1rem;
-  }
-
-  .category {
-    padding: 15px;
-    height: auto;
-  }
-
-  .category img {
-    max-height: 100px; /* Зменшуємо висоту зображення для маленьких екранів */
-  }
-
   .navbar {
-    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s ease;
+  }
+
+  .navbar.hidden {
+    top: -60px; /* Приховуємо меню */
   }
 }
-
