@@ -172,4 +172,13 @@ footer {
   }
 }
 
+/* ✅ Зменшення розміру картинки Розе */
+.category.roze img {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.category.roze:hover img {
+  transform: scale(0.95);
+}
 
