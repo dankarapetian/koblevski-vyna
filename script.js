@@ -1,24 +1,20 @@
-// Скрипт для приховування меню при прокручуванні
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 100) { // Якщо прокручено більше 100px
-    navbar.classList.add('scrolled'); // Додає клас, щоб сховати меню
-  } else {
-    navbar.classList.remove('scrolled'); // Видаляє клас при поверненні наверх
-  }
-});
+// Сховати/показати navbar при прокрутці (мобільна версія)
+let lastScrollTop = 0;
+const navbar = document.getElementById('navbar');
 
-// Відкриття/закриття мобільного меню за допомогою кнопки
-const mobileMenuButton = document.querySelector('.mobile-menu-button');
-const navbarLinks = document.querySelector('.nav-links');
-
-mobileMenuButton.addEventListener('click', function () {
-  navbarLinks.classList.toggle('active'); // Додає або видаляє клас 'active' при натисканні на кнопку
-});
-
-// Закриття меню при натисканні на будь-який пункт меню в мобільній версії
-navbarLinks.addEventListener('click', function () {
+window.addEventListener('scroll', function () {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   if (window.innerWidth <= 768) {
-    navbarLinks.classList.remove('active'); // Закриває меню після вибору пункту
+    if (scrollTop > lastScrollTop) {
+      navbar.classList.add('scrolled'); // Приховати
+    } else {
+      navbar.classList.remove('scrolled'); // Показати
+    }
   }
+  lastScrollTop = scrollTop;
+});
+
+// Кнопка мобільного меню
+document.getElementById('menuButton').addEventListener('click', function () {
+  document.getElementById('navLinks').classList.toggle('active');
 });
