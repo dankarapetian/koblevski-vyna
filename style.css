@@ -43,7 +43,7 @@ body {
   color: #ffcccb;
 }
 
-/* Паралакс секція */
+/* Паралакс */
 .hero {
   background-image: url('image/hero-wine.jpg');
   background-size: cover;
@@ -73,7 +73,7 @@ body {
   font-size: 1.3rem;
 }
 
-/* Заголовок секції */
+/* Заголовок */
 .main-header {
   text-align: center;
   padding: 60px 20px 40px;
@@ -114,12 +114,21 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
+
 .category img {
-  width: auto;
-  height: 150px;
-  margin-top: 150px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   transition: transform 0.3s;
 }
+
+/* Зменшена картинка тільки для коньяку */
+.category.konjak img {
+  width: auto;
+  height: 20px;
+  margin-top: 10px;
+}
+
 .category h3 {
   padding: 20px;
   font-size: 1.3rem;
@@ -168,15 +177,10 @@ footer {
   .category img {
     height: 180px;
   }
+
+  .category.konjak img {
+    height: 16px;
+  }
 }
 
-/* ✅ Зменшення розміру картинки Розе */
-.category.roze img {
-  transform: scale(0.9);
-  transition: transform 0.3s ease;
-}
-
-.category.roze:hover img {
-  transform: scale(0.95);
-}
 
