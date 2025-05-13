@@ -1,22 +1,18 @@
-// Ховає navbar при прокрутці вниз (лише мобільна версія)
 let lastScrollTop = 0;
-const navbar = document.querySelector(".navbar");
+const navbar = document.querySelector('.navbar');
 
-window.addEventListener("scroll", function () {
-  const scrollTop = window.scrollY;
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const isMobile = window.innerWidth <= 768;
 
-  if (window.innerWidth <= 768) {
+  if (isMobile) {
     if (scrollTop > lastScrollTop) {
-      navbar.classList.add("scrolled");
+      navbar.style.transform = 'translateY(-100%)';
     } else {
-      navbar.classList.remove("scrolled");
+      navbar.style.transform = 'translateY(0)';
     }
-    lastScrollTop = scrollTop;
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  } else {
+    navbar.style.transform = 'translateY(0)';
   }
 });
-
-// Відкриття/закриття мобільного меню
-function toggleMobileMenu() {
-  const navLinks = document.querySelector(".nav-links");
-  navLinks.classList.toggle("active");
-}
