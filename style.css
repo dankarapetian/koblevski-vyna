@@ -1,4 +1,4 @@
-/* Скидання стилів */
+/* Скидання */
 * {
   margin: 0;
   padding: 0;
@@ -32,7 +32,7 @@ body {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -43,7 +43,7 @@ body {
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 30px;
+  margin-left: 20px;
   font-weight: 500;
   transition: color 0.3s;
 }
@@ -52,49 +52,40 @@ body {
   color: #ffdede;
 }
 
-/* Кнопка мобільного меню (необов'язкова) */
+/* Кнопка меню */
 .mobile-menu-button {
   display: none;
-  font-size: 30px;
+  font-size: 28px;
   cursor: pointer;
+  margin-left: auto;
+  color: white;
 }
 
-/* Hero-зображення */
-.hero {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 80px; /* щоб не перекривалося navbar */
-}
-
+/* Hero Image */
 .hero-image {
   width: 100%;
   height: auto;
-  display: block;
+  max-height: 250px;
   object-fit: cover;
-  max-height: 300px;
-}
-
-@media (max-width: 768px) {
-  .hero-image {
-    max-height: 450px;
-  }
+  display: block;
 }
 
 /* Заголовок */
 .main-header {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 80px 20px 40px;
   background-color: #fff3f3;
-  color: #6b0f1a;
+  margin-top: 250px; /* Щоб не перекривалось картинкою */
 }
 
 .main-header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  color: #6b0f1a;
   margin-bottom: 10px;
 }
 
 .main-header p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #444;
 }
 
@@ -103,7 +94,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
-  padding: 60px;
+  padding: 40px;
 }
 
 .category {
@@ -118,7 +109,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  height: 320px;
+  height: 300px;
 }
 
 .category:hover {
@@ -127,7 +118,7 @@ body {
 }
 
 .category img {
-  max-height: 140px;
+  max-height: 120px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -138,12 +129,12 @@ body {
 
 .category h3 {
   margin-top: 15px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #6b0f1a;
 }
 
 .category.konjak img {
-  max-height: 120px;
+  max-height: 100px;
 }
 
 /* Footer */
@@ -166,7 +157,6 @@ footer {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 20px;
   }
 
   .mobile-menu-button {
@@ -188,22 +178,19 @@ footer {
     margin: 10px 0;
   }
 
+  .hero-image {
+    max-height: 180px;
+  }
+
   .main-header {
     padding: 40px 20px;
-  }
-
-  .main-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .main-header p {
-    font-size: 1rem;
+    margin-top: 180px;
   }
 
   .categories {
     grid-template-columns: repeat(2, 1fr);
-    padding: 30px;
     gap: 20px;
+    padding: 30px;
   }
 
   .category {
@@ -211,7 +198,8 @@ footer {
   }
 
   .category img {
-    max-height: 120px;
+    max-height: 100px;
   }
 }
+
 
