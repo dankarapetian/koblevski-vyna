@@ -1,3 +1,4 @@
+/* Скидання стилів */
 * {
   margin: 0;
   padding: 0;
@@ -6,82 +7,85 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fafafa;
-  color: #333;
+  background-color: #fafafa; /* Світлий фон */
+  color: #333; /* Темний текст */
   line-height: 1.6;
 }
 
 /* Навігація */
 .navbar {
-  background-color: #6b0f1a;
+  background-color: #6b0f1a; /* Основний червоний */
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 10px 40px; /* Тонша шапка */
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 20px; /* Зменшений розмір логотипу */
   font-weight: bold;
 }
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ffdede;
+  color: #ffdede; /* Світлий червоний для hover */
 }
 
 /* Hero-зображення */
 .hero {
-  margin-top: 70px; /* щоб не перекривалась шапкою */
+  margin-top: 60px; /* Відступ для шапки */
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
 }
 
 .hero-image {
   width: 100%;
-  height: auto;
-  max-height: 400px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 /* Заголовок */
 .main-header {
   text-align: center;
-  padding: 60px 20px 40px;
-  background-color: #fff3f3;
+  padding: 80px 20px 40px;
+  background-color: #fff3f3; /* Легкий фон */
 }
 
 .main-header h1 {
-  font-size: 2.5rem;
-  color: #6b0f1a;
+  font-size: 3rem;
+  color: #6b0f1a; /* Основний червоний */
 }
 
 .main-header p {
-  margin-top: 10px;
   font-size: 1.2rem;
   color: #444;
+  margin-top: 10px;
 }
 
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   padding: 60px;
 }
@@ -118,7 +122,7 @@ body {
 .category h3 {
   margin-top: 15px;
   font-size: 1.2rem;
-  color: #6b0f1a;
+  color: #6b0f1a; /* Основний червоний */
 }
 
 .category.konjak img {
@@ -136,7 +140,7 @@ footer {
 /* Адаптивність */
 @media (max-width: 1024px) {
   .hero-image {
-    max-height: 300px;
+    max-height: 350px;
   }
 
   .categories {
@@ -162,7 +166,7 @@ footer {
   }
 
   .hero-image {
-    max-height: 220px;
+    max-height: 250px;
   }
 
   .categories {
@@ -173,8 +177,6 @@ footer {
 
 @media (max-width: 480px) {
   .hero-image {
-    max-height: 180px;
+    max-height: 200px;
   }
 }
-
-
