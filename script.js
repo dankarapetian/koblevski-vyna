@@ -1,20 +1,22 @@
-// Сховати/показати navbar при прокрутці (мобільна версія)
 let lastScrollTop = 0;
-const navbar = document.getElementById('navbar');
+const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', function () {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (window.innerWidth <= 768) {
-    if (scrollTop > lastScrollTop) {
-      navbar.classList.add('scrolled'); // Приховати
-    } else {
-      navbar.classList.remove('scrolled'); // Показати
-    }
-  }
-  lastScrollTop = scrollTop;
-});
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-// Кнопка мобільного меню
-document.getElementById('menuButton').addEventListener('click', function () {
-  document.getElementById('navLinks').classList.toggle('active');
+  // Тільки для мобільних (до 768px)
+  if (window.innerWidth <= 768) {
+    if (currentScroll > lastScrollTop) {
+      // Скрол вниз — сховати navbar
+      navbar.classList.add('scrolled');
+    } else {
+      // Скрол вгору — показати navbar
+      navbar.classList.remove('scrolled');
+    }
+  } else {
+    // На великих екранах завжди показано
+    navbar.classList.remove('scrolled');
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
