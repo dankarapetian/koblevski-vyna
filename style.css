@@ -43,36 +43,6 @@ body {
   color: #ffcccb;
 }
 
-/* Паралакс */
-.hero {
-  background-image: url('image/hero-wine.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 50px;
-  border-radius: 20px;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.3rem;
-}
-
 /* Заголовок */
 .main-header {
   text-align: center;
@@ -80,9 +50,9 @@ body {
   background-color: #fff3f3;
 }
 
-.main-header h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.main-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
   color: #6b0f1a;
 }
 
@@ -94,10 +64,11 @@ body {
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
   padding: 60px;
   background-color: #fff;
+  justify-items: center;
 }
 
 .category {
@@ -108,6 +79,9 @@ body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .category:hover {
@@ -117,16 +91,28 @@ body {
 
 .category img {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: opacity 0.3s;
 }
 
-/* Зменшена картинка тільки для коньяку */
+/* Спеціальний розмір для великих */
+.category.bile img,
+.category.chervone img,
+.category.roze img,
+.category.igriste img,
+.category.chacha img,
+.category.rom img {
+  width: 400px;
+  height: 750px;
+  object-fit: cover;
+}
+
+/* Звичайний розмір для Коньяку */
 .category.konjak img {
-  width: auto;
-  height: 20px;
-  margin-top: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .category h3 {
@@ -162,25 +148,34 @@ footer {
     margin: 10px 0;
   }
 
-  .hero h1 {
+  .main-header h1 {
     font-size: 2rem;
   }
 
-  .hero p {
+  .main-header p {
     font-size: 1rem;
   }
 
-  .main-header h2 {
-    font-size: 2rem;
+  .categories {
+    padding: 30px;
+    grid-template-columns: 1fr;
   }
 
   .category img {
-    height: 180px;
+    width: 100%;
+    height: auto;
   }
 
-  .category.konjak img {
-    height: 16px;
+  .category.bile img,
+  .category.chervone img,
+  .category.roze img,
+  .category.igriste img,
+  .category.chacha img,
+  .category.rom img {
+    width: 100%;
+    height: auto;
   }
 }
+
 
 
