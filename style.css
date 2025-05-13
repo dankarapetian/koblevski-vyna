@@ -52,25 +52,38 @@ body {
   color: #ffdede;
 }
 
-/* Кнопка мобільного меню */
+/* Кнопка мобільного меню (необов'язкова) */
 .mobile-menu-button {
   display: none;
   font-size: 30px;
   cursor: pointer;
 }
 
-/* Зображення героя */
+/* Hero-зображення */
+.hero {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 80px; /* щоб не перекривалося navbar */
+}
+
 .hero-image {
   width: 100%;
-  max-height: 280px;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
+  max-height: 300px;
+}
+
+@media (max-width: 768px) {
+  .hero-image {
+    max-height: 450px;
+  }
 }
 
 /* Заголовок */
 .main-header {
   text-align: center;
-  padding: 100px 20px 40px;
+  padding: 60px 20px 40px;
   background-color: #fff3f3;
   color: #6b0f1a;
 }
@@ -147,10 +160,6 @@ footer {
   .categories {
     grid-template-columns: repeat(3, 1fr);
   }
-
-  .hero-image {
-    max-height: 320px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -180,7 +189,7 @@ footer {
   }
 
   .main-header {
-    padding: 80px 20px 30px;
+    padding: 40px 20px;
   }
 
   .main-header h1 {
@@ -205,3 +214,4 @@ footer {
     max-height: 120px;
   }
 }
+
