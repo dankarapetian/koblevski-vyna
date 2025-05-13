@@ -5,9 +5,8 @@
   box-sizing: border-box;
 }
 
-/* Загальні стилі */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
@@ -24,6 +23,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 .logo {
@@ -36,33 +36,11 @@ body {
   text-decoration: none;
   margin-left: 30px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
   color: #ffdede;
-}
-
-/* Кнопка для мобільної версії */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Зображення героя */
-.hero {
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* Заголовок */
@@ -83,10 +61,26 @@ body {
   color: #444;
 }
 
+/* Встановлюємо картинку hero-wine */
+.main-header img {
+  width: 100%; /* Картинка займає всю ширину */
+  height: auto; /* Зберігається пропорція */
+  max-height: 400px; /* Ліміт по висоті для великих екранів */
+  object-fit: cover; /* Покращує обрізку картинки */
+}
+
+/* Зменшення розміру картинки hero-wine на десктопі */
+@media (min-width: 768px) {
+  .main-header img {
+    max-width: 80%; /* Зменшуємо картинку до 80% ширини екрану на десктопі */
+    max-height: 350px; /* Ліміт висоти для десктопної версії */
+  }
+}
+
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 категорії в рядку */
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 60px;
 }
@@ -170,38 +164,16 @@ footer {
   }
 
   .categories {
-    grid-template-columns: repeat(2, 1fr); /* 2 категорії в рядку на мобільних */
-  }
-
-  .menu-toggle {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-
-  .nav-links {
-    display: none; /* Меню приховане по замовчуванню */
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-  }
-
-  .navbar.open .nav-links {
-    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 20px;
   }
 }
 
-/* Мобільна версія - приховування меню при прокручуванні */
-@media (max-width: 480px) {
-  .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: top 0.3s ease;
-  }
-
-  .navbar.hidden {
-    top: -60px; /* Приховуємо меню */
+/* Відображення меню в мобільній версії при прокрутці */
+@media (max-width: 768px) {
+  .navbar.scrolled {
+    transform: translateY(-100%); /* Сховує меню при прокручуванні вниз */
   }
 }
+
