@@ -1,24 +1,24 @@
-/* Скидання стилів */
+/* Скидання */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Загальне */
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #fafafa;
   color: #333;
+  line-height: 1.6;
 }
 
 /* Навігація */
 .navbar {
+  background-color: #6b0f1a;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #6b0f1a;
   padding: 20px 60px;
   position: sticky;
   top: 0;
@@ -26,7 +26,6 @@ body {
 }
 
 .logo {
-  color: white;
   font-size: 24px;
   font-weight: bold;
 }
@@ -40,107 +39,74 @@ body {
 }
 
 .nav-links a:hover {
-  color: #ffcccb;
+  color: #ffdede;
 }
 
-/* Паралакс секція */
-.hero {
-  background-image: url('image/hero-wine.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-.hero-content {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  border-radius: 20px;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* Заголовок секції */
+/* Заголовок */
 .main-header {
   text-align: center;
-  padding: 50px 20px 30px;
+  padding: 60px 20px 40px;
   background-color: #fff3f3;
 }
 
-.main-header h2 {
+.main-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
   color: #6b0f1a;
 }
 
 .main-header p {
-  font-size: 1.1rem;
+  margin-top: 10px;
+  font-size: 1.2rem;
   color: #444;
 }
 
 /* Категорії */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   padding: 60px;
-  background-color: #fff;
 }
 
 .category {
-  background-color: #fefefe;
+  background-color: #fff;
   border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 320px;
 }
 
 .category:hover {
   transform: translateY(-8px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
-/* Стиль для категорій, крім коньяку */
-.category.bile img,
-.category.chervone img,
-.category.roze img,
-.category.igriste img,
-.category.chacha img,
-.category.rom img {
-  width: 180px;
-  height: auto;
+.category img {
+  max-height: 140px;
   object-fit: contain;
-  margin: 0 auto;
+  transition: transform 0.3s ease;
 }
 
-/* Стандартний коньяк */
-.category.konjak img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.category:hover img {
+  transform: scale(1.05);
 }
 
 .category h3 {
-  padding: 15px 10px 0;
+  margin-top: 15px;
   font-size: 1.2rem;
   color: #6b0f1a;
-  background-color: #fff;
+}
+
+/* Для великого зображення коньяку — обмеження */
+.category.konjak img {
+  max-height: 120px;
 }
 
 /* Підвал */
@@ -149,11 +115,10 @@ footer {
   color: white;
   text-align: center;
   padding: 25px 10px;
-  margin-top: 60px;
   font-size: 14px;
 }
 
-/* Адаптив */
+/* Адаптивність */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -161,7 +126,7 @@ footer {
   }
 
   .nav-links {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .nav-links a {
@@ -169,23 +134,17 @@ footer {
     margin: 10px 0;
   }
 
-  .hero h1 {
-    font-size: 2rem;
+  .main-header h1 {
+    font-size: 1.8rem;
   }
 
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .main-header h2 {
-    font-size: 2rem;
+  .category {
+    height: auto;
   }
 
   .category img {
-    height: auto;
-    width: 140px;
+    max-height: 120px;
   }
 }
-
 
 
