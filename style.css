@@ -10,6 +10,7 @@ body {
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
+  padding-top: 50px; /* додаємо відступ зверху */
 }
 
 /* Шапка (лише для десктопу) */
@@ -37,9 +38,9 @@ body {
 }
 
 .nav-links a button {
-  background-color: transparent; /* прозорий фон */
-  color: #fff;                   /* білий текст */
-  border: 1px solid #fff;        /* тонка біла рамка */
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 6px 14px;
   border-radius: 5px;
   font-weight: bold;
@@ -52,9 +53,24 @@ body {
   color: #6b0f1a;
 }
 
+/* Мобільна шапка */
+.mobile-header {
+  display: none;
+  background-color: #6b0f1a;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
 /* HERO */
 .hero {
-  margin-top: 50px;
+  /* margin-top: 50px; видаляємо */
 }
 
 .hero-image {
@@ -63,13 +79,6 @@ body {
   max-height: 450px;
   object-fit: cover;
   display: block;
-}
-
-/* Збільшуємо hero тільки на десктопі */
-@media (min-width: 1024px) {
-  .hero-image {
-    max-height: 750px;
-  }
 }
 
 /* MAIN HEADER */
@@ -174,6 +183,10 @@ footer {
     display: none;
   }
 
+  .mobile-header {
+    display: block;
+  }
+
   .mobile-bottom-menu {
     display: flex;
     flex-wrap: wrap;
@@ -181,6 +194,10 @@ footer {
 
   .main-header {
     padding-bottom: 80px;
+  }
+
+  body {
+    padding-top: 50px; /* враховуємо мобільну шапку */
   }
 }
 
