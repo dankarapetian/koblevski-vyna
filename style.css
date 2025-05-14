@@ -68,7 +68,7 @@ body {
 /* Збільшуємо hero тільки на десктопі */
 @media (min-width: 1024px) {
   .hero-image {
-    max-height: 800px;
+    max-height: 750px;
   }
 }
 
