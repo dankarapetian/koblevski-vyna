@@ -56,20 +56,23 @@ body {
   margin-top: 50px;
 }
 
+/* HERO - зменшено висоту */
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 450px;
+  max-height: 300px; /* Було 450px */
   object-fit: cover;
   display: block;
+  margin-bottom: 0;
 }
 
-/* MAIN HEADER */
+/* MAIN HEADER - наближено до зображення */
 .main-header {
   text-align: center;
-  padding: 60px 20px 40px;
+  padding: 30px 20px 30px; /* Було 60px 20px 40px */
   background-color: #fff3f3;
 }
+
 
 .main-header h1 {
   font-size: 2.4rem;
