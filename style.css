@@ -8,104 +8,68 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fafafa;
   color: #333;
-  line-height: 1.6;
 }
 
 .main-header {
   position: relative;
   text-align: center;
-  background-color: #fff3f3;
   padding: 60px 20px 40px;
-  overflow: hidden;
+  background-color: #fff3f3;
 }
 
 .hero-image {
   background-image: url('image/hero-wine.jpg');
   background-size: cover;
   background-position: center;
-  height: 50vh;
-  opacity: 0.5;
-  position: absolute;
-  top: 0; left: 0; width: 100%;
-  z-index: -1;
+  height: 60vh;
+  width: 100%;
 }
 
 .header-content {
   position: relative;
+  margin-top: -120px;
   z-index: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.main-header h1 {
+.header-content h1 {
   font-size: 2.5rem;
   color: #6b0f1a;
+  margin-bottom: 10px;
 }
 
-.main-header p {
-  font-size: 1.1rem;
-  color: #5b5b5b;
-  margin-top: 10px;
+.header-content p {
+  font-size: 1.2rem;
+  color: #444;
 }
 
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 25px;
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 60px 20px;
 }
 
 .category {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
   padding: 20px;
-  text-decoration: none;
-  color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
 .category img {
   max-height: 100px;
-  margin-bottom: 15px;
-  object-fit: contain;
-}
-
-.category h3 {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #6b0f1a;
-}
-
-/* Footer */
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Адаптивність */
-@media (max-width: 768px) {
-  .main-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .main-header p {
-    font-size: 0.95rem;
-  }
-
-  .categories {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
-  }
-
-  .category h3 {
-    color: #333;
-  }
-}
-
+  margin-bottom:
