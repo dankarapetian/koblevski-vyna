@@ -15,7 +15,7 @@ body {
 /* Шапка (лише для десктопу) */
 .navbar {
   background-color: #6b0f1a;
-  color: ;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,9 +37,9 @@ body {
 }
 
 .nav-links a button {
-  background-color: #fff;
-  color: #6b0f1a;
-  border: none;
+  background-color: transparent; /* прозорий фон */
+  color: #fff;                   /* білий текст */
+  border: 1px solid #fff;        /* тонка біла рамка */
   padding: 6px 14px;
   border-radius: 5px;
   font-weight: bold;
@@ -48,7 +48,8 @@ body {
 }
 
 .nav-links a button:hover {
-  background-color: #eecfcf;
+  background-color: #fff;
+  color: #6b0f1a;
 }
 
 /* HERO */
