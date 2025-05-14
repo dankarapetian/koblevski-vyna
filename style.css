@@ -48,10 +48,10 @@ body {
   transition: 0.3s;
 }
 
-.nav-links a button:hover {
+/*.nav-links a button:hover {
   background-color: #fff;
   color: #6b0f1a;
-}
+}*/
 
 /* Мобільна шапка */
 .mobile-header {
