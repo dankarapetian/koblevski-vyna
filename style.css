@@ -64,6 +64,13 @@ body {
   display: block;
 }
 
+/* Збільшуємо hero тільки на десктопі */
+@media (min-width: 1024px) {
+  .hero-image {
+    max-height: 700px;
+  }
+}
+
 /* MAIN HEADER */
 .main-header {
   text-align: center;
@@ -175,3 +182,4 @@ footer {
     padding-bottom: 80px;
   }
 }
+
