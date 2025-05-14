@@ -19,7 +19,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 6px 16px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -32,12 +32,13 @@ body {
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -52,34 +53,27 @@ body {
   color: #ffdede;
 }
 
-/* Мобільне меню */
-.mobile-menu-button {
-  display: none;
-  font-size: 30px;
-  cursor: pointer;
+/* Головне зображення hero */
+.hero {
+  margin-top: 60px; /* враховує висоту navbar */
+}
+
+img.hero-image {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 40px auto;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* Заголовок */
 .main-header {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 40px 20px;
   background-color: #fff3f3;
-  position: relative;
-  overflow: hidden;
-}
-
-.main-header::before {
-  content: "";
-  background-image: url('image/hero-wine.jpg');
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 40vh; /* Для фонового зображення */
-  z-index: -1;
-  opacity: 0.4;
+  color: #6b0f1a;
 }
 
 .main-header h1 {
@@ -90,13 +84,6 @@ body {
 .main-header p {
   font-size: 1.2rem;
   color: #444;
-}
-
-/* Зображення hero */
-img.hero-wine {
-    width: 10%; /* Установите желаемый процент ширины */
-    height: 10%; /* Сохранение пропорций изображения */
-    max-width: 100px; /* Максимальная ширина изображения */
 }
 
 /* Категорії */
@@ -156,10 +143,11 @@ footer {
 @media (max-width: 1024px) {
   .categories {
     grid-template-columns: repeat(3, 1fr);
+    padding: 40px;
   }
 
-  .hero-image {
-    max-height: 250px;
+  .main-header h1 {
+    font-size: 2rem;
   }
 }
 
@@ -170,31 +158,27 @@ footer {
     padding: 10px 20px;
   }
 
-  .mobile-menu-button {
-    display: block;
-  }
-
   .nav-links {
-    display: none;
     flex-direction: column;
     width: 100%;
     margin-top: 10px;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-
   .nav-links a {
-    margin: 10px 0;
+    margin: 8px 0;
   }
 
-  .main-header::before {
-    height: 250px; /* Для мобільних пристроїв */
+  .hero {
+    margin-top: 100px;
+  }
+
+  img.hero-image {
+    max-width: 90%;
+    margin: 20px auto;
   }
 
   .main-header {
-    padding: 120px 20px 40px;
+    padding: 60px 20px 30px;
   }
 
   .main-header h1 {
@@ -207,13 +191,14 @@ footer {
 
   .categories {
     grid-template-columns: repeat(2, 1fr);
-    padding: 30px;
     gap: 20px;
+    padding: 30px;
   }
 
   .category {
     height: auto;
   }
+}
 
   .category img {
     max-height: 120px;
