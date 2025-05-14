@@ -10,10 +10,10 @@ body {
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
-  padding-top: 50px; /* додаємо відступ зверху */
+  padding-top: 0; /* без зайвих відступів */
 }
 
-/* Шапка (лише для десктопу) */
+/* Шапка (десктоп) */
 .navbar {
   background-color: #6b0f1a;
   color: white;
@@ -70,7 +70,7 @@ body {
 
 /* HERO */
 .hero {
-  /* margin-top: 50px; видаляємо */
+  padding-top: 60px; /* щоб не перекривала шапка */
 }
 
 .hero-image {
@@ -174,7 +174,7 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-  margin-bottom: 60px; /* простір під нижнє меню */
+  margin-bottom: 60px; /* під нижнє меню */
 }
 
 /* Адаптивність */
@@ -192,12 +192,11 @@ footer {
     flex-wrap: wrap;
   }
 
+  .hero {
+    padding-top: 60px; /* мобільна шапка */
+  }
+
   .main-header {
     padding-bottom: 80px;
   }
-
-  body {
-    padding-top: 50px; /* враховуємо мобільну шапку */
-  }
 }
-
