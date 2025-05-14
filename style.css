@@ -1,8 +1,8 @@
+/* Скидання стилів */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -12,148 +12,166 @@ body {
   line-height: 1.6;
 }
 
-/* Hero секція */
-.hero {
-  background-image: url('image/hero-wine.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
+/* Шапка (лише для десктопу) */
+.navbar {
+  background-color: #6b0f1a;
+  color: white;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  padding: 8px 16px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+.logo {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.hero-content {
-  position: relative;
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links a button {
+  background-color: #fff;
+  color: #6b0f1a;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links a button:hover {
+  background-color: #eecfcf;
+}
+
+/* HERO */
+.hero {
+  margin-top: 50px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+/* MAIN HEADER */
+.main-header {
   text-align: center;
-  color: #fff;
-  z-index: 1;
-  padding: 20px;
+  padding: 60px 20px 40px;
+  background-color: #fff3f3;
 }
 
-.hero-content h1 {
-  font-size: 3rem;
+.main-header h1 {
+  font-size: 2.4rem;
+  color: #6b0f1a;
   margin-bottom: 10px;
 }
 
-.hero-content p {
+.main-header p {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  color: #444;
 }
 
-.scroll-button {
-  display: inline-block;
-  background: #6b0f1a;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background 0.3s ease;
-}
-
-.scroll-button:hover {
-  background: #a31627;
-}
-
-/* Категорії */
+/* КАТЕГОРІЇ */
 .categories {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 30px;
-  padding: 60px 20px;
-  background-color: #fff;
+  padding: 40px 20px;
 }
 
 .category {
   background-color: #fff;
-  border-radius: 12px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer; /* Сделать категорию кликабельной */
-  transition: background 0.3s ease;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .category:hover {
-  background: rgba(107, 15, 26, 0.1); /* Эффект наведения */
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .category img {
   max-height: 120px;
   object-fit: contain;
-  margin-bottom: 10px;
+  transition: transform 0.3s ease;
 }
 
-/* Вернуть кнопки или текст */
-.category button {
-  display: block;
+.category:hover img {
+  transform: scale(1.05);
+}
+
+.category h3 {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #6b0f1a;
+}
+
+/* Мобільне нижнє меню */
+.mobile-bottom-menu {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 10px 0;
+  justify-content: space-around;
+  gap: 10px;
+  z-index: 10000;
+}
+
+.mobile-bottom-menu button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mobile-bottom-menu button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* FOOTER */
+footer {
   background-color: #6b0f1a;
   color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: 10px;
-}
-
-.category button:hover {
-  background-color: #a31627;
-}
-
-/* Footer */
-.footer-nav {
-  background-color: #000;
-  color: white;
   text-align: center;
-  padding: 25px 10px;
+  padding: 20px;
   font-size: 14px;
-  margin-top: 40px;
-}
-
-.footer-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1rem;
-}
-
-.footer-nav a:hover {
-  text-decoration: underline;
-}
-
-.footer-nav p {
-  margin-top: 10px;
+  margin-bottom: 60px; /* простір під нижнє меню */
 }
 
 /* Адаптивність */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
+  .navbar {
+    display: none;
   }
 
-  .hero-content p {
-    font-size: 1rem;
+  .mobile-bottom-menu {
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  .scroll-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
+  .main-header {
+    padding-bottom: 80px;
   }
 }
-
