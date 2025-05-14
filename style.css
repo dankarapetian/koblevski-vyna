@@ -1,3 +1,4 @@
+/* Скидання стилів */
 * {
   margin: 0;
   padding: 0;
@@ -11,14 +12,14 @@ body {
   line-height: 1.6;
 }
 
-/* Десктопна навігація */
+/* Шапка (лише для десктопу) */
 .navbar {
   background-color: #6b0f1a;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 8px 16px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -32,42 +33,47 @@ body {
 
 .nav-links {
   display: flex;
+  gap: 10px;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: 500;
+.nav-links a button {
+  background-color: #fff;
+  color: #6b0f1a;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav-links a:hover {
-  color: #ffdede;
+.nav-links a button:hover {
+  background-color: #eecfcf;
 }
 
-/* Hero-зображення */
+/* HERO */
 .hero {
   margin-top: 50px;
-  overflow: hidden;
 }
 
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 450px;
   object-fit: cover;
+  display: block;
 }
 
-/* Заголовок */
+/* MAIN HEADER */
 .main-header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px 40px;
   background-color: #fff3f3;
-  color: #6b0f1a;
 }
 
 .main-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
+  color: #6b0f1a;
   margin-bottom: 10px;
 }
 
@@ -76,12 +82,12 @@ body {
   color: #444;
 }
 
-/* Категорії */
+/* КАТЕГОРІЇ */
 .categories {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 30px;
-  padding: 60px;
+  padding: 40px 20px;
 }
 
 .category {
@@ -91,71 +97,70 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   padding: 20px;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .category img {
   max-height: 120px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.category:hover img {
+  transform: scale(1.05);
 }
 
 .category h3 {
-  margin-top: 15px;
-  font-size: 1.2rem;
+  margin-top: 12px;
+  font-size: 1.1rem;
   color: #6b0f1a;
 }
 
-/* Footer */
-footer {
-  background-color: #6b0f1a;
-  color: white;
-  text-align: center;
-  padding: 25px 10px;
-  font-size: 14px;
-}
-
-/* Нижнє мобільне меню */
+/* Мобільне нижнє меню */
 .mobile-bottom-menu {
   display: none;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #111;
+  background-color: #000;
   padding: 10px 0;
   justify-content: space-around;
-  align-items: center;
-  z-index: 9999;
+  gap: 10px;
+  z-index: 10000;
 }
 
-.mobile-bottom-menu a {
-  color: white;
-  text-decoration: none;
+.mobile-bottom-menu button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
   font-size: 14px;
-  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.mobile-bottom-menu a:hover {
-  color: #e86e6e;
+.mobile-bottom-menu button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* FOOTER */
+footer {
+  background-color: #6b0f1a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-bottom: 60px; /* простір під нижнє меню */
 }
 
 /* Адаптивність */
-@media (max-width: 1024px) {
-  .categories {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 30px;
-    gap: 20px;
-  }
-
-  .hero-image {
-    max-height: 250px;
-  }
-}
-
 @media (max-width: 768px) {
   .navbar {
     display: none;
@@ -163,22 +168,11 @@ footer {
 
   .mobile-bottom-menu {
     display: flex;
+    flex-wrap: wrap;
   }
 
-  .main-header h1 {
-    font-size: 1.8rem;
-  }
-
-  .main-header p {
-    font-size: 1rem;
-  }
-
-  .category {
-    padding: 15px;
-  }
-
-  .category img {
-    max-height: 100px;
+  .main-header {
+    padding-bottom: 80px;
   }
 }
 
