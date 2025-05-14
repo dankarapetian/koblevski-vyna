@@ -11,30 +11,29 @@ body {
   line-height: 1.6;
 }
 
-/* Hero секція */
-.hero {
-  background: url('image/hero-wine.jpg') no-repeat center center/cover;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Зображення героя */
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: cover;
+  display: block;
 }
 
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 40px;
+/* Заголовок */
+.main-header {
   text-align: center;
-  border-radius: 12px;
+  padding: 30px 20px;
+  background-color: #fff3f3;
+  color: #6b0f1a;
 }
 
-.hero-overlay h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+.main-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
 }
 
-.hero-overlay p {
+.main-header p {
   font-size: 1.2rem;
 }
 
@@ -43,8 +42,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
-  padding: 60px 20px;
-  background-color: #fff;
+  padding: 40px 20px;
 }
 
 .category {
@@ -104,16 +102,4 @@ body {
   margin-top: 10px;
   font-size: 0.9rem;
 }
-
-/* Адаптив */
-@media (max-width: 768px) {
-  .hero-overlay h1 {
-    font-size: 2rem;
-  }
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-}
-
-
 
