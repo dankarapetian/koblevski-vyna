@@ -10,7 +10,7 @@ body {
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
-  padding-top: 0; /* без зайвих відступів */
+  padding-top: 0;
 }
 
 /* Шапка (десктоп) */
@@ -70,13 +70,16 @@ body {
 
 /* HERO */
 .hero {
-  padding-top: 60px; /* щоб не перекривала шапка */
+  padding-top: 60px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image {
   width: 100%;
-  height: auto;
-  max-height: 450px;
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -174,7 +177,7 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 14px;
-  margin-bottom: 60px; /* під нижнє меню */
+  margin-bottom: 60px;
 }
 
 /* Адаптивність */
@@ -193,7 +196,7 @@ footer {
   }
 
   .hero {
-    padding-top: 60px; /* мобільна шапка */
+    padding-top: 60px;
   }
 
   .main-header {
