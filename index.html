@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Коблевські Вина</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Коблівські Вина</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header class="main-header">
-    <div class="hero-image"></div>
-    <div class="header-content">
+  <!-- Hero секція -->
+  <section class="hero">
+    <div class="hero-content">
       <h1>Вибір вина та напоїв</h1>
       <p>Оберіть категорію напоїв для перегляду наших продуктів</p>
-    </div>
-  </header>
-
-  <section class="categories">
-    <div class="category">
-      <img src="image/white-wine.png" alt="Біле вино">
-      <span>Біле вино</span>
-    </div>
-    <div class="category">
-      <img src="image/red-wine.png" alt="Червоне вино">
-      <span>Червоне вино</span>
-    </div>
-    <div class="category">
-      <img src="image/rose.png" alt="Розе">
-      <span>Розе</span>
-    </div>
-    <div class="category">
-      <img src="image/sparkling.png" alt="Ігристе вино">
-      <span>Ігристе вино</span>
-    </div>
-    <div class="category">
-      <img src="image/cognac.png" alt="Коньяк">
-      <span>Коньяк</span>
-    </div>
-    <div class="category">
-      <img src="image/vermouth.png" alt="Вермут">
-      <span>Вермут</span>
+      <a href="#categories" class="scroll-button">Перейти до каталогу</a>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Коблевські Вина
+  <!-- Категорії -->
+  <section class="categories" id="categories">
+    <div class="category">
+      <img src="image/bile-vyno.jpg" alt="Біле вино">
+      <button onclick="window.location.href='bile.html'">Біле вино</button>
+    </div>
+    <div class="category">
+      <img src="image/krasne-vino.jpg" alt="Червоне вино">
+      <button onclick="window.location.href='chervone.html'">Червоне вино</button>
+    </div>
+    <div class="category">
+      <img src="image/roze-vino.jpg" alt="Розе">
+      <button onclick="window.location.href='roze.html'">Розе</button>
+    </div>
+    <div class="category">
+      <img src="image/igriste-vino.jpg" alt="Ігристе">
+      <button onclick="window.location.href='igriste-wine.html'">Ігристе вино</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-nav">
+    <a href="pro-nas.html">Про нас</a>
+    <a href="umovy.html">Умови</a>
+    <a href="licenzii.html">Ліцензії</a>
+    <a href="contact.html">Контакти</a>
+    <p>&copy; 2025 Коблівські Вина</p>
   </footer>
 
 </body>
 </html>
-
 
 
