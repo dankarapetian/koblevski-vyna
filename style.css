@@ -72,4 +72,51 @@ body {
 
 .category img {
   max-height: 100px;
-  margin-bottom:
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.category:hover img {
+  transform: scale(1.05);
+}
+
+.category span {
+  display: inline-block;
+  font-weight: bold;
+  color: #6b0f1a;
+}
+
+footer {
+  background-color: #6b0f1a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-content {
+    margin-top: -80px;
+    padding: 15px;
+  }
+
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-content p {
+    font-size: 1rem;
+  }
+
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 10px;
+  }
+
+  .category span {
+    color: #333;
+  }
+}
+
