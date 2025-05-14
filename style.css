@@ -98,9 +98,22 @@ body {
   margin-bottom: 10px;
 }
 
-/* Удалены стили для кнопок */
+/* Вернуть кнопки или текст */
 .category button {
-  display: none;
+  display: block;
+  background-color: #6b0f1a;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.category button:hover {
+  background-color: #a31627;
 }
 
 /* Footer */
