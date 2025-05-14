@@ -84,6 +84,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer; /* Сделать категорию кликабельной */
+  transition: background 0.3s ease;
+}
+
+.category:hover {
+  background: rgba(107, 15, 26, 0.1); /* Эффект наведения */
 }
 
 .category img {
@@ -92,19 +98,9 @@ body {
   margin-bottom: 10px;
 }
 
+/* Удалены стили для кнопок */
 .category button {
-  background-color: #6b0f1a;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.category button:hover {
-  background-color: #a31627;
+  display: none;
 }
 
 /* Footer */
