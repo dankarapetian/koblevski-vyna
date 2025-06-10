@@ -5,54 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Червоні Вина | Коблівські Вина</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .subcategory-header {
-      text-align: center;
-      padding: 40px 20px;
-      background-color: #fff0f0;
-    }
-    .subcategory-header h1 {
-      color: #8b0000;
-    }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-    }
-    .product {
-      cursor: pointer;
-      text-align: center;
-    }
-    .product img {
-      max-width: 200px;
-      height: auto;
-      border: 4px solid #8b0000;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      max-width: 500px;
-      width: 90%;
-    }
-    .close {
-      float: right;
-      font-size: 24px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
 
@@ -78,12 +30,12 @@
   <section class="products">
 
     <div class="product" onclick="openModal('modal1')">
-      <img src="https://cdn.pixabay.com/photo/2017/05/31/18/40/wine-2367023_1280.jpg" alt="Мерло">
+      <img src="https://vinoteka.ua/image/catalog/products/merlo.webp" alt="Мерло">
       <h3>Мерло</h3>
     </div>
 
     <div class="product" onclick="openModal('modal2')">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/wine-1867430_1280.jpg" alt="Каберне Совіньйон">
+      <img src="https://vinoteka.ua/image/catalog/products/kabernet.webp" alt="Каберне Совіньйон">
       <h3>Каберне Совіньйон</h3>
     </div>
 
@@ -161,5 +113,4 @@
 
 </body>
 </html>
-
 
