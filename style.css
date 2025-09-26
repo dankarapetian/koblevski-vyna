@@ -11,10 +11,9 @@ body {
   background-color: #fafafa;
   color: #333;
   line-height: 1.6;
-  padding-top: 0;
 }
 
-/* Шапка (десктоп) */
+/* Десктопна шапка */
 .navbar {
   background-color: #6b0f1a;
   color: white;
@@ -69,13 +68,42 @@ body {
   z-index: 999;
 }
 
+/* Мобільне верхнє меню */
+.mobile-top-menu {
+  display: none;
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  background-color: #000;
+  padding: 10px 0;
+  justify-content: space-around;
+  gap: 10px;
+  z-index: 10000;
+}
+
+.mobile-top-menu button {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mobile-top-menu button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 /* HERO */
 .hero {
-  padding-top: 60px;
-  height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 60px;
 }
 
 .hero-image {
@@ -142,46 +170,7 @@ body {
   color: #6b0f1a;
 }
 
-/* Мобільне нижнє меню */
-.mobile-bottom-menu {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #000;
-  padding: 10px 0;
-  justify-content: space-around;
-  gap: 10px;
-  z-index: 10000;
-}
-
-.mobile-bottom-menu button {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.mobile-bottom-menu button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-/* FOOTER */
-footer {
-  background-color: #6b0f1a;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-bottom: 60px;
-}
-
-/* Вина */
+/* Продукти */
 .products {
   display: flex;
   flex-wrap: wrap;
@@ -253,6 +242,16 @@ footer {
   cursor: pointer;
 }
 
+/* FOOTER */
+footer {
+  background-color: #6b0f1a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-bottom: 60px;
+}
+
 /* Адаптивність */
 @media (max-width: 768px) {
   .navbar {
@@ -263,17 +262,21 @@ footer {
     display: block;
   }
 
-  .mobile-bottom-menu {
+  .mobile-top-menu {
     display: flex;
     flex-wrap: wrap;
   }
 
   .hero {
-    padding-top: 60px;
+    height: auto;
+    padding-top: 80px;
+    flex-direction: column;
   }
 
-  .main-header {
-    padding-bottom: 80px;
+  .hero-image {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
   }
 }
 
