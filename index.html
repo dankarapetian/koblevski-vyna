@@ -8,16 +8,116 @@
 </head>
 <body>
 
-<!-- Шапка лише для десктопу -->
-<header class="navbar">
-  <div class="logo">🍷 Коблівські Вина</div>
-  <nav class="nav-links">
-    <a href="pro-nas.html"><button>Про нас</button></a>
-    <a href="umovy.html"><button>Умови</button></a>
-    <a href="licenzii.html"><button>Ліцензії</button></a>
-    <a href="contact.html"><button>Контакти</button></a>
-  </nav>
-</header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Білі Вина | Коблівські Вина</title>
+  <style>
+    body {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #6b0f1a ;
+      color: #fff;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .subcategory-header {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.85);
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .product {
+      width: 200px;
+      aspect-ratio: 1 / 1;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product:hover {
+      transform: scale(1.05);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      flex-grow: 1;
+    }
+    .product h3 {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🍷 Коблівські Вина</div>
+    <nav class="nav-links">
+      <a href="index.html">Головна</a>
+      <a href="pro-nas.html">Про нас</a>
+      <a href="umovy.html">Умови</a>
+      <a href="licenzii.html">Ліцензії</a>
+      <a href="kontakty.html">Контакти</a>
+    </nav>
+  </header>
 
 <!-- Шапка для мобільної версії -->
 <div class="mobile-header">
