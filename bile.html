@@ -1,200 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Білі Вина | Коблівські Вина</title>
-  <style>
-    body {
-      background-image: url('image/fon_bile.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #6b0f1a ;
-      color: #fff;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    .subcategory-header {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.85);
-      margin: 20px;
-      border-radius: 10px;
-    }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-    .product {
-      width: 200px;
-      aspect-ratio: 1 / 1;
-      background-color: rgba(255, 255, 255, 0.9);
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .product:hover {
-      transform: scale(1.05);
-    }
-    .product img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      flex-grow: 1;
-    }
-    .product h3 {
-      margin: 10px 0;
-      font-size: 1.1em;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      position: relative;
-    }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Біле вино – Коблівські Вина</title>
+  style.css
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">🍷 Коблівські Вина</div>
-    <nav class="nav-links">
-      <a href="index.html">Головна</a>
-      <a href="pro-nas.html">Про нас</a>
-      <a href="umovy.html">Умови</a>
-      <a href="licenzii.html">Ліцензії</a>
-      <a href="kontakty.html">Контакти</a>
-    </nav>
-  </header>
+<header class="navbar">
+  <div class="logo">🍷 Коблівські Вина</div>
+  <nav class="nav-links">
+    index.html<button>Головна</button></a>
+    pro-nas.html<button>Про нас</button></a>
+    contact.html<button>Контакти</button></a>
+  </nav>
+</header>
 
-  <section class="subcategory-header">
-    <h1>Білі Вина</h1>
-    <p>Оберіть вино для перегляду деталей</p>
-  </section>
+<section class="main-header">
+  <h1>Біле вино</h1>
+  <p>Оберіть улюблене біле вино та додайте до кошика</p>
+</section>
 
-  <section class="products">
-    <div class="product" onclick="openModal('modal1')">
-      <img src="https://vinoteka.ua/image/catalog/products/shardonnay.webp" alt="Шардоне">
-      <h3>Шардоне</h3>
-    </div>
-    <div class="product" onclick="openModal('modal2')">
-      <img src="https://vinoteka.ua/image/catalog/products/sauvignon-blanc.webp" alt="Совіньйон Блан">
-      <h3>Совіньйон Блан</h3>
-    </div>
-    <div class="product" onclick="openModal('modal3')">
-      <img src="https://vinoteka.ua/image/catalog/products/rkaciteli.webp" alt="Ркацителі">
-      <h3>Ркацителі</h3>
-    </div>
-    <div class="product" onclick="openModal('modal4')">
-      <img src="https://vinoteka.ua/image/catalog/products/aligote.webp" alt="Аліготе">
-      <h3>Аліготе</h3>
-    </div>
-  </section>
-
-  <div class="modal" id="modal1">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal1')">&times;</span>
-      <h2>Шардоне</h2>
-      <p><strong>Сорт:</strong> Шардоне</p>
-      <p><strong>Міцність:</strong> 13%</p>
-      <p><strong>Обʼєм:</strong> 0.75 л</p>
-      <p><strong>Опис:</strong> Сухе біле вино з нотками яблук, груш та легким деревним післясмаком.</p>
-    </div>
+<section class="products">
+  <div class="product">
+    image/bile1.jpg
+    <h3>Біле вино Класик</h3>
+    <p>Ціна: 200₴</p>
+    <button onclick="addToCart('Біле вино Класик', 200)">Додати в кошик</button>
   </div>
 
-  <div class="modal" id="modal2">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal2')">&times;</span>
-      <h2>Совіньйон Блан</h2>
-      <p><strong>Сорт:</strong> Совіньйон Блан</p>
-      <p><strong>Міцність:</strong> 12.5%</p>
-      <p><strong>Обʼєм:</strong> 0.75 л</p>
-      <p><strong>Опис:</strong> Яскраве вино з ароматами цитрусу, трав та легкою кислинкою.</p>
-    </div>
+  <div class="product">
+    image/bile2.jpg
+    <h3>Біле вино Резерв</h3>
+    <p>Ціна: 250₴</p>
+    <button onclick="addToCart('Біле вино Резерв', 250)">Додати в кошик</button>
   </div>
 
-  <div class="modal" id="modal3">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal3')">&times;</span>
-      <h2>Ркацителі</h2>
-      <p><strong>Сорт:</strong> Ркацителі</p>
-      <p><strong>Міцність:</strong> 12%</p>
-      <p><strong>Обʼєм:</strong> 0.75 л</p>
-      <p><strong>Опис:</strong> Легке біле вино з нотами абрикоса, персика та меду.</p>
-    </div>
+  <div class="product">
+    image/bile3.jpg
+    <h3>Біле вино Еліт</h3>
+    <p>Ціна: 300₴</p>
+    <button onclick="addToCart('Біле вино Еліт', 300)">Додати в кошик</button>
   </div>
+</section>
 
-  <div class="modal" id="modal4">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('modal4')">&times;</span>
-      <h2>Аліготе</h2>
-      <p><strong>Сорт:</strong> Аліготе</p>
-      <p><strong>Міцність:</strong> 11.5%</p>
-      <p><strong>Обʼєм:</strong> 0.75 л</p>
-      <p><strong>Опис:</strong> Свіже вино з квітковим ароматом та освіжаючим післясмаком.</p>
-    </div>
-  </div>
+<!-- Кнопка для перегляду кошика -->
+<div style="text-align:center; margin:20px;">
+  <button onclick="showCart()">Переглянути кошик</button>
+</div>
 
-  <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = "flex";
-    }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-    window.onclick = function(event) {
-      document.querySelectorAll('.modal').forEach(function(modal) {
-        if (event.target === modal) modal.style.display = "none";
-      });
-    };
-  </script>
+<!-- Кнопка для оплати -->
+<div style="text-align:center; margin:20px;">
+  https://www.liqpay.ua/api/3/checkout
+    <input type="hidden" name="data" id="liqpayData" />
+    <input type="hidden" name="signature" id="liqpaySignature" />
+    <input type="submit" value="Оплатити через LiqPay" />
+  </form>
+</div>
 
+cart.js</script>
 </body>
 </html>
-
-
