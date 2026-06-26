@@ -1,20 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Біле вино – Коблівські Вина</title>
-  style.css
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="navbar">
   <div class="logo">🍷 Коблівські Вина</div>
   <nav class="nav-links">
-    index.html<button>Головна</button></a>
-    pro-nas.html<button>Про нас</button></a>
-    contact.html<button>Контакти</button></a>
+    <a href="index.html"><button>Головна</button></a>
+    <a href="pro-nas.html"><button>Про нас</button></a>
+    <a href="contact.html"><button>Контакти</button></a>
   </nav>
 </header>
 
@@ -24,42 +26,46 @@
 </section>
 
 <section class="products">
+
   <div class="product">
-    image/bile1.jpg
+    <img src="image/bile1.jpg" alt="wine">
     <h3>Біле вино Класик</h3>
     <p>Ціна: 200₴</p>
     <button onclick="addToCart('Біле вино Класик', 200)">Додати в кошик</button>
   </div>
 
   <div class="product">
-    image/bile2.jpg
+    <img src="image/bile2.jpg" alt="wine">
     <h3>Біле вино Резерв</h3>
     <p>Ціна: 250₴</p>
     <button onclick="addToCart('Біле вино Резерв', 250)">Додати в кошик</button>
   </div>
 
   <div class="product">
-    image/bile3.jpg
+    <img src="image/bile3.jpg" alt="wine">
     <h3>Біле вино Еліт</h3>
     <p>Ціна: 300₴</p>
     <button onclick="addToCart('Біле вино Еліт', 300)">Додати в кошик</button>
   </div>
+
 </section>
 
-<!-- Кнопка для перегляду кошика -->
+<!-- Cart -->
 <div style="text-align:center; margin:20px;">
   <button onclick="showCart()">Переглянути кошик</button>
 </div>
 
-<!-- Кнопка для оплати -->
+<!-- LiqPay -->
 <div style="text-align:center; margin:20px;">
-  https://www.liqpay.ua/api/3/checkout
+  <form method="POST" action="https://www.liqpay.ua/api/3/checkout">
     <input type="hidden" name="data" id="liqpayData" />
     <input type="hidden" name="signature" id="liqpaySignature" />
     <input type="submit" value="Оплатити через LiqPay" />
   </form>
 </div>
 
-cart.js</script>
+<!-- JS -->
+<script src="cart.js"></script>
+
 </body>
 </html>
